@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { Context } from './Context'
@@ -17,13 +17,16 @@ const ClickedLetter = styled.div`
   margin: 0.2rem;
   padding: 0.2rem;
   font-size: 2rem;
-  text-decoration: line-through;
   color: grey;
 ` 
 
 const Letter = ({ letter }) => {
   const [clicked, setClicked] = useState(false)
   const { state, dispatch } = useContext(Context)
+
+  useEffect(() => {
+    setClicked(false)
+  }, [state.wordToGuess])
 
   const handleClick = () => {
     setClicked(true)
@@ -40,7 +43,7 @@ const Letter = ({ letter }) => {
     }
   }
 
-  if (!clicked) {
+  if (state.gameStatus === 'gameOn' && !clicked) {
     return(
       <NonClickedLetter onClick={handleClick}>
         {letter.toUpperCase()}

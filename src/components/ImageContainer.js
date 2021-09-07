@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import { Context } from './Context'
 
 
+const ImageWrapper = styled.div`
+  height: 10rem;
+`
 const Image = styled.img`
   color: white;
   width: 30%;
@@ -14,9 +17,9 @@ const ImageContainer = () => {
   const { state } = useContext(Context)
 
   return(
-    <div>
+    <ImageWrapper>
       <Image src={`images/hangman${state.mistakes}.png`} />
-    </div>
+    </ImageWrapper>
   )
 }
 

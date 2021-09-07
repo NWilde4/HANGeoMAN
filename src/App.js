@@ -10,11 +10,15 @@ import GlobalStyle from './theme/GlobalStyles'
 import theme from './theme/Theme'
 
 import Main from './components/Main'
-import { countries } from './countries' 
+import Loading from './components/Loading'
 
-const initalState = { 
+const initialState = { 
   mistakes: 0,
-  gameStatus: "gameOn"
+  gameStatus: "gameOn",
+  gamesCount: {
+    gamesWon: 0,
+    gamesLost: 0
+  }
 }
 
 const Wrapper = styled.div`
@@ -25,58 +29,41 @@ const Wrapper = styled.div`
 `
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initalState)
+  const [state, dispatch] = useReducer(reducer, initialState)
   const value = {state, dispatch}
 
+  const startNewGame = (countryArray) => {
+    const wordToGuess = countryArray[Math.floor(Math.random() * countryArray.length)]
+      .name
+      .toLowerCase()
+      .normalize("NFD").replace(/\p{Diacritic}/gu, "")
+
+    const wordToGuessArray = [...wordToGuess].map((letter) => {
+      return (letter === " ") 
+        ? {character: letter, guessed: true}
+        : {character: letter, guessed: false}
+    })
+
+    dispatch({
+      type: "loadWordToGuessArray",
+      payload: {wordToGuess, wordToGuessArray}
+    })
+  }
+ 
   useEffect(() => {
-    const countryListFromAPI = axios
+    axios
       .get('https://restcountries.eu/rest/v2/all')
       .then(response => {
-        const wordToGuess = response.data[Math.floor(Math.random() * countries.length)]
-          .name
-          .toLowerCase()
-        const wordToGuessArray = [...wordToGuess].map((letter) => {
-          if (letter === " ") {
-            return(
-              {character: letter, guessed: true}
-            )
-          }
-          return(
-            {character: letter, guessed: false}
-          )
-        })
+        console.log(response.data)
+        const filteredCountries = response.data
+          .filter(object => (object.name.length < 20))
         dispatch({
-          type: "loadWordToGuessArray",
-          payload: {wordToGuess, wordToGuessArray}
+          type: "initializeCountries",
+          payload: filteredCountries
         })
-
+        startNewGame(response.data)
       })
   }, [])
-
-  console.log(state)
-  if (state.gameStatus === 'gameLost') {
-    return(
-      <div>
-        GAME OVER
-      </div>
-    )
-  }
-
-  if (state.gameStatus === 'gameWon') {
-    return(
-      <div>
-        YOU WON
-      </div>
-    )
-  }
-
-  if (!state.wordToGuessArray) {
-    return(
-      <div>
-        LOADING
-      </div>
-    )
-  }
 
   return(
     <div>
@@ -84,7 +71,10 @@ const App = () => {
         <GlobalStyle />
         <ContextProvider value={value}>
           <Wrapper>
-            <Main />
+            {(!state.wordToGuessArray)
+              ? <Loading />
+              : <Main startNewGame={startNewGame} />
+            }
           </Wrapper>
         </ContextProvider>
       </ThemeProvider>

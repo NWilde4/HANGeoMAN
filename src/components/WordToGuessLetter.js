@@ -1,7 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-
-import { Context } from './Context'
 
 const RevealedLetter = styled.div`
   margin: 0.2rem;
@@ -29,7 +27,6 @@ const Space = styled.div`
 `
 
 const WordToGuessLetter = ({ letter }) => {
-  const { state } = useContext(Context)
   if (letter.character ===" ") {
     return(<Space>{letter.character}</Space>)    
   }

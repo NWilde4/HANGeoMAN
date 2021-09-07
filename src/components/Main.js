@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-
-import { Context } from './Context'
 
 import LetterList from './LetterList'
 import WordToGuess from './WordToGuess'
 import ImageContainer from './ImageContainer'
+import Message from './Message'
+import NewGameButton from './NewGameButton'
 
 const Title = styled.h1`
   font-size: 5rem;
@@ -19,12 +19,13 @@ const MainWrapper = styled.div`
   justify-content: center;
 `
 
-const Main = () => {
-  const { state } = useContext(Context)
+const Main = ({ startNewGame }) => {
 
   return(
     <MainWrapper>
       <Title>HANGEOMAN</Title>
+      <Message />
+      <NewGameButton startNewGame={startNewGame} />
       <ImageContainer />
       <LetterList />
       <WordToGuess />
