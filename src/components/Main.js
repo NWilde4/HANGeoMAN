@@ -7,11 +7,6 @@ import ImageContainer from './ImageContainer'
 import Message from './Message'
 import NewGameButton from './NewGameButton'
 
-const Title = styled.h1`
-  font-size: 5rem;
-  margin: 1rem;
-`
-
 const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,12 +18,11 @@ const Main = ({ startNewGame }) => {
 
   return(
     <MainWrapper>
-      <Title>HANGEOMAN</Title>
-      <Message />
-      <NewGameButton startNewGame={startNewGame} />
       <ImageContainer />
       <LetterList />
       <WordToGuess />
+      <Message />
+      <NewGameButton startNewGame={startNewGame} />
     </MainWrapper>
   )
 }

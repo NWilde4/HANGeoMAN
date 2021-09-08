@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { Context } from './Context'
 
-
 const ImageWrapper = styled.div`
   height: 10rem;
 `

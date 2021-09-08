@@ -4,11 +4,20 @@ import styled from 'styled-components'
 import { Context } from './Context'
 
 const ButtonContainer = styled.div`
-  font-size: 2rem;
   color: white;
-  height: 3rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 ` 
 const Button = styled.button`
+  color: white;
+  background: none;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-size: 2rem;
+  cursor: pointer;
 ` 
 
 const NewGameButton = ({ startNewGame }) => {

@@ -9,6 +9,7 @@ import reducer from './components/reducer'
 import GlobalStyle from './theme/GlobalStyles'
 import theme from './theme/Theme'
 
+import Header from './components/Header'
 import Main from './components/Main'
 import Loading from './components/Loading'
 
@@ -23,8 +24,7 @@ const initialState = {
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   text-align: center;
 `
 
@@ -71,6 +71,7 @@ const App = () => {
         <GlobalStyle />
         <ContextProvider value={value}>
           <Wrapper>
+            <Header />
             {(!state.wordToGuessArray)
               ? <Loading />
               : <Main startNewGame={startNewGame} />
