@@ -5,7 +5,6 @@ const reducer = (state, action) => {
       return {...state, countries: action.payload}
 
     case 'loadWordToGuessArray':
-      console.log(action.payload.wordToGuess)
       return {...state, wordToGuessArray: action.payload.wordToGuessArray, wordToGuess: action.payload.wordToGuess, mistakes: 0, gameStatus: 'gameOn'}
 
     case 'revealLetters':
