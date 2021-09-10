@@ -8,7 +8,7 @@ const Title = styled.h1`
 
 const Header = () => {
   return(
-    <Title>HANGEOMAN</Title>
+    <Title>HANGeoMAN</Title>
   )
 }
 
