@@ -5,8 +5,7 @@ import { Context } from './Context'
 
 const MessageContainer = styled.div`
   font-size: 3rem;
-  margin: 2rem;
-  color: white;
+  margin: 1rem;
   height: 3rem;
   color: red;
 ` 

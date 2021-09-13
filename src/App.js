@@ -1,13 +1,12 @@
 //https://restcountries.eu/rest/v2/all
 
 import React, { useReducer, useEffect } from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 import axios from 'axios'
 
 import { ContextProvider } from './components/Context'
 import reducer from './components/reducer'
 import GlobalStyle from './theme/GlobalStyles'
-import theme from './theme/Theme'
 
 import Header from './components/Header'
 import Main from './components/Main'
@@ -23,8 +22,6 @@ const initialState = {
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
   text-align: center;
 `
 
@@ -66,18 +63,16 @@ const App = () => {
 
   return(
     <div>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <ContextProvider value={value}>
-          <Wrapper>
-            <Header />
-            {(!state.wordToGuessArray)
-              ? <Loading />
-              : <Main startNewGame={startNewGame} />
-            }
-          </Wrapper>
-        </ContextProvider>
-      </ThemeProvider>
+      <GlobalStyle />
+      <ContextProvider value={value}>
+        <Wrapper>
+          <Header />
+          {(!state.wordToGuessArray)
+            ? <Loading />
+            : <Main startNewGame={startNewGame} />
+          }
+        </Wrapper>
+      </ContextProvider>
     </div>
   )
 }
