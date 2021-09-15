@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  font-size: 62.5%;
+}
+
+@media (max-width: 999px) {
+
+  * {
+    margin: 0;
+  }
+
+}

@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { Context } from './Context'
 
 const MessageContainer = styled.div`
-  font-size: 3rem;
-  margin: 1rem;
-  height: 3rem;
   color: red;
+  font-size: 5rem;
+  margin: 1rem;
+  height: 5rem;
 ` 
 
 const Message = () => {

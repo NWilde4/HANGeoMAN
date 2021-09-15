@@ -3,17 +3,23 @@ import styled, { keyframes } from 'styled-components'
 
 import { Context } from './Context'
 
-const pulsate = keyframes`
+const vibrate = keyframes`
   0% {
-    font-size: 2rem;
+    transform: rotate(0deg);
   }
-  50% {
-    font-size: 2.2rem; 
+  2% {
+    transform: rotate(-4deg);
+    color: grey;
+  }
+  4% {
+    transform: rotate(0deg);
+    color: white;
   }
   100% {
-    font-size: 2rem; 
+    transform: rotate(0deg);
   }
 `
+
 const appear = keyframes`
   0% {
     color: black;
@@ -28,28 +34,21 @@ const appear = keyframes`
 
 const ButtonContainer = styled.div`
   color: white;
-  height: 2rem;
-  display: flex;
-  justify-content: center;
+  height: 4rem;
   align-items: center;
 ` 
+
 const Button = styled.button`
   color: white;
   background: none;
   outline: none;
   border: none;
   font-family: inherit;
-  font-size: 2rem;
+  font-size: 4rem;
   cursor: pointer;
-  animation: ${pulsate} 1s linear infinite, ${appear} 3s linear 1;
-
-  &:hover {
-    font-size: 2.2rem;
-    color: red;
-  }
+  animation: ${vibrate} 2s linear infinite, ${appear} 3s linear 1;
 
   &:active {
-    animation: none;
   }
 ` 
 

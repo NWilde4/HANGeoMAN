@@ -6,8 +6,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-color: black;
     font-family: 'Gochi Hand', cursive;
-    font-size: 62.5%;
     color: white;
+
+    @media (max-width: 900px) {
+      color: yellow;
+    }
   }
 `
 

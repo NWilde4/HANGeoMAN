@@ -5,7 +5,6 @@ import { Context } from './Context'
 import WordToGuessLetter from './WordToGuessLetter'
 
 const WordWrapper = styled.div`
-  margin: 1rem;
   display: flex;
   justify-content: center;
 `

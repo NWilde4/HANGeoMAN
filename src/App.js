@@ -57,7 +57,7 @@ const App = () => {
           type: "initializeCountries",
           payload: filteredCountries
         })
-        startNewGame(response.data)
+        startNewGame(filteredCountries)
       })
   }, [])
 

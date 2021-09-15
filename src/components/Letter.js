@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { Context } from './Context'
 
 const NonClickedLetter = styled.div`
-  margin: 0.2rem;
-  padding: 0.2rem;
-  font-size: 2rem;
+  margin: 0.4rem;
+  padding: 0.4rem;
+  font-size: 4rem;
   cursor: pointer;
 
   &:hover {
@@ -14,9 +14,9 @@ const NonClickedLetter = styled.div`
   }
 ` 
 const ClickedLetter = styled.div`
-  margin: 0.2rem;
-  padding: 0.2rem;
-  font-size: 2rem;
+  margin: 0.4rem;
+  padding: 0.4rem;
+  font-size: 4rem;
   color: grey;
 ` 
 
