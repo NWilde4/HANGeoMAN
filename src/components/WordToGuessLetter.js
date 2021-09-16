@@ -1,39 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const RevealedLetter = styled.div`
+const Character = styled.div`
   margin: 0.4rem;
   padding: 0.4rem;
   font-size: 6rem;
-  border-bottom: 0.4rem solid white;
   width: 4rem;
   height: 6rem;
-`
-const HiddenLetter = styled.div`
-  margin: 0.4rem;
-  padding: 0.4rem;
-  font-size: 6rem;
-  border-bottom: 0.4rem solid white;
-  width: 4rem;
-  height: 6rem;
-`
+  border-bottom: ${props => props.space ? 'none' : '0.4rem solid white'};
+  flex-basis: ${props => props.space ? '100%' : 'auto'};
 
-const Space = styled.div`
-  margin: 0.4rem;
-  padding: 0.4rem;
-  font-size: 6rem;
-  width: 4rem;
-  height: 6rem;
+  @media (max-width: 999px) {
+    margin: 0.2rem;
+    padding: 0.2rem;
+    font-size: 3.6rem;
+    width: 2.6rem;
+    height: ${props => props.space ? '0' : '3.6rem'};
+  }
+
 `
 
 const WordToGuessLetter = ({ letter }) => {
   if (letter.character ===" ") {
-    return(<Space>{letter.character}</Space>)    
+    return(<Character space>{letter.character}</Character>)    
   }
   if (letter.guessed) {
-    return(<RevealedLetter>{letter.character.toUpperCase()}</RevealedLetter>)
+    return(<Character>{letter.character.toUpperCase()}</Character>)
   }
-  return(<HiddenLetter></HiddenLetter>)
+  return(<Character></Character>)
 }
 
 export default WordToGuessLetter

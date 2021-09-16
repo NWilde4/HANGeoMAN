@@ -7,6 +7,7 @@ import WordToGuessLetter from './WordToGuessLetter'
 const WordWrapper = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `
 
 const WordToGuess = () => {

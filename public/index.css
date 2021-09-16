@@ -6,7 +6,7 @@
 @media (max-width: 999px) {
 
   * {
-    margin: 0;
+    font-size: 50%;
   }
 
 }

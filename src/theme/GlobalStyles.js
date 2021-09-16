@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     color: white;
 
     @media (max-width: 900px) {
-      color: yellow;
+
     }
   }
 `
