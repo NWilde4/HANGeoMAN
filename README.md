@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# HANGeoMAN
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
+Classic Hangman game with country names to guess.
+API provided by [http://restcountries.eu](http://restcountries.eu)
+
+## Demo
+Available at [http://hangeoman.herokuapp.com/](http://hangeoman.herokuapp.com/)
+
+## Setting up the application
+
+Clone the application
+run `npm install` in the root directory`
 
 ## Available Scripts
 

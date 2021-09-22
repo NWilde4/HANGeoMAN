@@ -12,6 +12,9 @@ const NonClickedLetter = styled.div`
   &:hover {
     color: red;
   }
+  &:active {
+    color: red;
+  }
 ` 
 const ClickedLetter = styled.div`
   margin: 0.4rem;

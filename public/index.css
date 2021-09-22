@@ -1,9 +1,15 @@
 * {
   margin: 0;
-  font-size: 62.5%;
+  font-size: 75%;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1400px) {
+
+  * {
+    font-size: 62.5%;
+  }
+
+@media (max-width: 480px) {
 
   * {
     font-size: 50%;
