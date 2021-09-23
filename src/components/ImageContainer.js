@@ -25,15 +25,15 @@ const Flag = styled.img`
 const ImageContainer = () => {
   const { state } = useContext(Context)
 
-  const countryFlag = state.countries
+  const countryFlagUrl = state.countries
     .find(country => (country.name.toLowerCase() === state.wordToGuess))
-    .flag
+    .flags[1]
 
   return(
     <ImageWrapper>
       {(state.gameStatus === 'gameOn') 
         ? <Image src={`images/hangman${state.mistakes}.png`} />
-        : <Flag src={countryFlag} /> 
+        : <Flag src={countryFlagUrl}/> 
       }
     </ImageWrapper>
   )

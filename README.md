@@ -2,7 +2,7 @@
 
 ## About
 Classic Hangman game with country names to guess.
-API provided by [http://restcountries.eu](http://restcountries.eu)
+API provided by [http://restcountries.eu](http://restcountries.eu).
 
 ## Demo
 Available at [http://hangeoman.herokuapp.com/](http://hangeoman.herokuapp.com/)
@@ -10,7 +10,7 @@ Available at [http://hangeoman.herokuapp.com/](http://hangeoman.herokuapp.com/)
 ## Setting up the application
 
 Clone the application
-run `npm install` in the root directory`
+Run `npm install` in the root directory`
 
 ## Available Scripts
 
