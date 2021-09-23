@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import { Context } from './Context'
+import FlagContainer from './FlagContainer'
 
 const ImageWrapper = styled.div`
   height: 17rem;
@@ -17,11 +18,6 @@ const Image = styled.img`
   filter: brightness(0) invert(1);
 `
 
-const Flag = styled.img`
-  width: 16rem;
-  border: 0.2rem solid white;
-`
-
 const ImageContainer = () => {
   const { state } = useContext(Context)
 
@@ -33,7 +29,7 @@ const ImageContainer = () => {
     <ImageWrapper>
       {(state.gameStatus === 'gameOn') 
         ? <Image src={`images/hangman${state.mistakes}.png`} />
-        : <Flag src={countryFlagUrl}/> 
+        : <FlagContainer countryFlagUrl={countryFlagUrl} /> 
       }
     </ImageWrapper>
   )
