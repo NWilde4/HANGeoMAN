@@ -8,14 +8,10 @@ const Character = styled.div`
   width: 4rem;
   height: 6rem;
   border-bottom: ${props => props.space ? 'none' : '0.4rem solid white'};
-  flex-basis: ${props => props.space ? '100%' : 'auto'};
 
-  @media (max-width: 999px) {
-    margin: 0.2rem;
-    padding: 0.2rem;
-    font-size: 3.6rem;
-    width: 2.6rem;
-    height: ${props => props.space ? '0' : '3.6rem'};
+  @media (max-width: 800px) {
+    height: ${props => props.space ? '0' : '6rem'};
+    flex-basis: ${props => props.space ? '100%' : 'auto'};
   }
 
 `

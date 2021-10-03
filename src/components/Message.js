@@ -22,7 +22,7 @@ const Message = () => {
        : "GAME OVER"
       }
     </MessageContainer>
-    )
+  )
 }
 
 export default Message

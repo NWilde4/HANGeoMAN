@@ -23,7 +23,7 @@ const ImageContainer = () => {
 
   const countryFlagUrl = state.countries
     .find(country => (country.name.toLowerCase() === state.wordToGuess))
-    .flags[1]
+    .flags['svg']
 
   return(
     <ImageWrapper>

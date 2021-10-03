@@ -9,6 +9,8 @@ const Flag = styled.img`
 
 const FlagContainer = ({ countryFlagUrl }) => {
   const [flagLoaded, setFlagLoaded] = useState(false)
+  console.log(countryFlagUrl)
+  console.log(flagLoaded)
 
   return(
     <>
