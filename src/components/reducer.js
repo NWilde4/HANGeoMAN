@@ -20,7 +20,8 @@ const reducer = (state, action) => {
           ...state.gamesCount, 
           gamesWon: state.gamesCount.gamesWon + 1
         }        
-
+        window.sessionStorage.setItem('gamesWon', state.gamesCount.gamesWon + 1)
+        
         return {...state, wordToGuessArray: newArray, gameStatus: 'gameWon', gamesCount: newGamesCount}
       }
       return {...state, wordToGuessArray: newArray}
@@ -33,6 +34,7 @@ const reducer = (state, action) => {
           ...state.gamesCount, 
           gamesLost: state.gamesCount.gamesLost + 1
         }
+        window.sessionStorage.setItem('gamesLost', state.gamesCount.gamesLost + 1)
 
         const revealedWord = state.wordToGuessArray.map(letterObject => ({...letterObject, guessed: true}))
 

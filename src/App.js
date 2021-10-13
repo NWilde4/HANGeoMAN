@@ -16,8 +16,8 @@ const initialState = {
   mistakes: 0,
   gameStatus: "gameOn",
   gamesCount: {
-    gamesWon: 0,
-    gamesLost: 0
+    gamesWon: window.sessionStorage.getItem('gamesWon') | 0,
+    gamesLost: window.sessionStorage.getItem('gamesLost') | 0
   }
 }
 
