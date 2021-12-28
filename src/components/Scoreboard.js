@@ -25,7 +25,7 @@ const Scoreboard = () => {
       <ScoreItem>|</ScoreItem>
       <ScoreItem>Lost: {state.gamesCount.gamesLost}</ScoreItem>
     </ScoreboardContainer>
-    )
+  )
 }
 
 export default Scoreboard

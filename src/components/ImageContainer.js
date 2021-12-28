@@ -23,13 +23,13 @@ const ImageContainer = () => {
 
   const countryFlagUrl = state.countries
     .find(country => (country.name.toLowerCase() === state.wordToGuess))
-    .flags['svg']
+    .flagUrl
 
   return(
     <ImageWrapper>
-      {(state.gameStatus === 'gameOn') 
+      {(state.gameStatus === 'gameOn')
         ? <Image src={`images/hangman${state.mistakes}.png`} />
-        : <FlagContainer countryFlagUrl={countryFlagUrl} /> 
+        : <FlagContainer countryFlagUrl={countryFlagUrl} />
       }
     </ImageWrapper>
   )

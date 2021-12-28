@@ -36,7 +36,7 @@ const ButtonContainer = styled.div`
   color: white;
   height: 4rem;
   align-items: center;
-` 
+`
 
 const Button = styled.button`
   color: white;
@@ -50,7 +50,7 @@ const Button = styled.button`
 
   &:active {
   }
-` 
+`
 
 const NewGameButton = ({ startNewGame }) => {
   const { state } = useContext(Context)

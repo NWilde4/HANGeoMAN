@@ -15,13 +15,13 @@ const NonClickedLetter = styled.div`
   &:active {
     color: red;
   }
-` 
+`
 const ClickedLetter = styled.div`
   margin: 0.4rem;
   padding: 0.4rem;
   font-size: 4rem;
   color: grey;
-` 
+`
 
 const Letter = ({ letter }) => {
   const [clicked, setClicked] = useState(false)
@@ -37,7 +37,7 @@ const Letter = ({ letter }) => {
       dispatch({
         type: 'increaseMistakesCount',
         payload: letter
-      })      
+      })
     } else {
       dispatch({
         type: 'revealLetters',

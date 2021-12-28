@@ -1,0 +1,28 @@
+type GameStatus =
+  | 'gameOn'
+  | 'gameWon'
+  | 'gameLost'
+
+interface GamesCount {
+  gamesWon: number,
+  gamesLost: number
+}
+
+export interface WordToGuessArray {
+  character: string,
+  guessed: boolean
+}
+
+export interface Country {
+  name: string,
+  flagUrl: string
+}
+
+export interface GameState {
+  mistakes: number,
+  gameStatus: GameStatus,
+  wordToGuess?: string,
+  gamesCount: GamesCount,
+  wordToGuessArray?: WordToGuessArray[],
+  countries?: Country[],
+}

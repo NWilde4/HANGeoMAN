@@ -17,8 +17,8 @@ const Character = styled.div`
 `
 
 const WordToGuessLetter = ({ letter }) => {
-  if (letter.character ===" ") {
-    return(<Character space>{letter.character}</Character>)    
+  if (letter.character ===' ') {
+    return(<Character space>{letter.character}</Character>)
   }
   if (letter.guessed) {
     return(<Character>{letter.character.toUpperCase()}</Character>)

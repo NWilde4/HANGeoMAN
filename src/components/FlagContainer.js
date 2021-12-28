@@ -12,12 +12,12 @@ const FlagContainer = ({ countryFlagUrl }) => {
 
   return(
     <>
-    <Flag
-      style={{display: flagLoaded ? 'block' : 'none'}}
-      src={countryFlagUrl}
-      onLoad={() => setFlagLoaded(true)} 
-    />
-    {!flagLoaded && <SpinningCircles fill='white' stroke='white' />}
+      <Flag
+        style={{ display: flagLoaded ? 'block' : 'none' }}
+        src={countryFlagUrl}
+        onLoad={() => setFlagLoaded(true)}
+      />
+      {!flagLoaded && <SpinningCircles fill='white' stroke='white' />}
     </>
   )
 

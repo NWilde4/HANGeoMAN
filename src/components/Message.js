@@ -8,7 +8,7 @@ const MessageContainer = styled.div`
   font-size: 5rem;
   margin: 1rem;
   height: 5rem;
-` 
+`
 
 const Message = () => {
   const { state } = useContext(Context)
@@ -18,8 +18,8 @@ const Message = () => {
   return(
     <MessageContainer>
       {(gameStatus === 'gameOn') ? null
-       : (gameStatus === 'gameWon') ? "YOU WIN"
-       : "GAME OVER"
+        : (gameStatus === 'gameWon') ? 'YOU WIN'
+          : 'GAME OVER'
       }
     </MessageContainer>
   )

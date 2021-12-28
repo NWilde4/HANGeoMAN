@@ -15,8 +15,8 @@ const LetterList = () => {
     <LetterListWrapper>
       {alphabet.map(letter => {
         return(
-          <Letter 
-            letter={letter} 
+          <Letter
+            letter={letter}
             key={letter}
           />
         )
