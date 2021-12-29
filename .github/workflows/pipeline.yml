@@ -16,7 +16,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "hangeoman"
           heroku_email: "wilde.norman@yahoo.com"
-          # healthcheck: "https://covid-stats-hungary.herokuapp.com/health"
+          # healthcheck: "https://hangeoman.herokuapp.com/health"
           # checkstring: "ok"
           # rollbackonhealthcheckfailed: true
 

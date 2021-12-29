@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 
-import { ContextProvider } from './components/Context'
+import { ContextProvider, initialState } from './components/Context'
 import reducer from './components/reducer'
 import GlobalStyle from './theme/GlobalStyles'
 
@@ -10,16 +10,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Loading from './components/Loading'
 
-import { GameState, Country } from './types'
-
-const initialState: GameState = {
-  mistakes: 0,
-  gameStatus: 'gameOn',
-  gamesCount: {
-    gamesWon: Number(window.sessionStorage.getItem('gamesWon')) | 0,
-    gamesLost: Number(window.sessionStorage.getItem('gamesLost')) | 0
-  }
-}
+import { Country } from './types'
 
 const Wrapper = styled.div`
   text-align: center;
@@ -40,9 +31,6 @@ const App = () => {
         ? { character: letter, guessed: true }
         : { character: letter, guessed: false }
     })
-
-    console.log(wordToGuessArray)
-    console.log(wordToGuess)
 
     dispatch({
       type: 'loadWordToGuessArray',
