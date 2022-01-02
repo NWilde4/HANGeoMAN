@@ -8,7 +8,11 @@ export const initialState: GameState = {
   gamesCount: {
     gamesWon: Number(window.sessionStorage.getItem('gamesWon')) | 0,
     gamesLost: Number(window.sessionStorage.getItem('gamesLost')) | 0
-  }
+  },
+  wordToGuess: '',
+  countryFlagUrl: '',
+  countries: [],
+  wordToGuessArray: []
 }
 
 export const Context = createContext<{

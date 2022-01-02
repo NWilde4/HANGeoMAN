@@ -8,6 +8,8 @@ import Message from './Message'
 import NewGameButton from './NewGameButton'
 import Scoreboard from './Scoreboard'
 
+import { StartNewGameProp } from '../types'
+
 const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +17,7 @@ const MainWrapper = styled.div`
   justify-content: space-between;
 `
 
-const Main = ({ startNewGame }) => {
+const Main = ({ startNewGame }: StartNewGameProp) => {
 
   return(
     <MainWrapper>

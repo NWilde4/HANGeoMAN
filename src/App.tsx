@@ -20,11 +20,11 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const value = { state, dispatch }
 
-  const startNewGame = (countryArray: Array<Country>) => {
-    const wordToGuess = countryArray[Math.floor(Math.random() * countryArray.length)]
-      .name
-      .toLowerCase()
-      .normalize('NFD').replace(/\p{Diacritic}/gu, '')
+  const startNewGame = (countryArray: Array<Country>): void => {
+
+    const country = countryArray[Math.floor(Math.random() * countryArray.length)]
+    const wordToGuess = country.name.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '')
+    const countryFlagUrl = country.flagUrl
 
     const wordToGuessArray = [...wordToGuess].map((letter) => {
       return (letter === ' ')
@@ -34,7 +34,7 @@ const App = () => {
 
     dispatch({
       type: 'loadWordToGuessArray',
-      payload: { wordToGuess, wordToGuessArray }
+      payload: { wordToGuess, wordToGuessArray, countryFlagUrl }
     })
   }
 
@@ -63,7 +63,7 @@ const App = () => {
       <ContextProvider value={value}>
         <Wrapper>
           <Header />
-          {(!state.wordToGuessArray)
+          {(state.wordToGuessArray.length === 0)
             ? <Loading />
             : <Main startNewGame={startNewGame} />
           }

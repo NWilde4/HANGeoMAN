@@ -7,7 +7,7 @@ const Flag = styled.img`
   border: 0.2rem solid white;
 `
 
-const FlagContainer = ({ countryFlagUrl }) => {
+const FlagContainer = ({ countryFlagUrl }: {countryFlagUrl: string}) => {
   const [flagLoaded, setFlagLoaded] = useState(false)
 
   return(

@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Character = styled.div`
+import { WordToGuessArray } from '../types'
+
+const Character = styled.div<{ space?: boolean }>`
   margin: 0.4rem;
   padding: 0.4rem;
   font-size: 6rem;
@@ -16,7 +18,7 @@ const Character = styled.div`
 
 `
 
-const WordToGuessLetter = ({ letter }) => {
+const WordToGuessLetter = ({ letter }: {letter: WordToGuessArray}) => {
   if (letter.character ===' ') {
     return(<Character space>{letter.character}</Character>)
   }

@@ -3,6 +3,8 @@ import styled, { keyframes } from 'styled-components'
 
 import { Context } from './Context'
 
+import { StartNewGameProp } from '../types'
+
 const vibrate = keyframes`
   0% {
     transform: rotate(0deg);
@@ -52,7 +54,7 @@ const Button = styled.button`
   }
 `
 
-const NewGameButton = ({ startNewGame }) => {
+const NewGameButton = ({ startNewGame }: StartNewGameProp) => {
   const { state } = useContext(Context)
 
   if (state.gameStatus === 'gameOn') {

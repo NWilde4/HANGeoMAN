@@ -18,11 +18,16 @@ export interface Country {
   flagUrl: string
 }
 
+export interface StartNewGameProp {
+  startNewGame: (countryArray: Array<Country>) => void
+}
+
 export interface GameState {
   mistakes: number,
   gameStatus: GameStatus,
-  wordToGuess?: string,
+  wordToGuess: string,
+  countryFlagUrl: string
   gamesCount: GamesCount,
-  wordToGuessArray?: WordToGuessArray[],
-  countries?: Country[],
+  wordToGuessArray: WordToGuessArray[],
+  countries: Country[],
 }

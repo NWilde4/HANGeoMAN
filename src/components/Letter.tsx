@@ -3,6 +3,11 @@ import styled from 'styled-components'
 
 import { Context } from './Context'
 
+interface LetterProps {
+  letter: string,
+}
+
+
 const NonClickedLetter = styled.div`
   margin: 0.4rem;
   padding: 0.4rem;
@@ -23,7 +28,7 @@ const ClickedLetter = styled.div`
   color: grey;
 `
 
-const Letter = ({ letter }) => {
+const Letter = ({ letter }: LetterProps) => {
   const [clicked, setClicked] = useState(false)
   const { state, dispatch } = useContext(Context)
 
@@ -36,7 +41,6 @@ const Letter = ({ letter }) => {
     if (!state.wordToGuess.includes(letter)) {
       dispatch({
         type: 'increaseMistakesCount',
-        payload: letter
       })
     } else {
       dispatch({

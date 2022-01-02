@@ -1,8 +1,9 @@
 import { GameState, Country, WordToGuessArray } from '../types'
 
-interface CountryName {
+interface CountryPayload {
   wordToGuessArray: WordToGuessArray[],
-  wordToGuess: string
+  wordToGuess: string,
+  countryFlagUrl: string
 }
 
 export type Action =
@@ -12,14 +13,14 @@ export type Action =
     }
   | {
       type: 'loadWordToGuessArray'
-      payload: CountryName
+      payload: CountryPayload
     }
   | {
       type: 'revealLetters'
       payload: string
     }
   | {
-      type: 'increaseMistakesCount'
+      type: 'increaseMistakesCount',
     }
 
 const reducer = (state: GameState, action: Action): GameState => {
@@ -28,7 +29,12 @@ const reducer = (state: GameState, action: Action): GameState => {
     return { ...state, countries: action.payload }
 
   case 'loadWordToGuessArray':
-    return { ...state, wordToGuessArray: action.payload.wordToGuessArray, wordToGuess: action.payload.wordToGuess, mistakes: 0, gameStatus: 'gameOn' }
+    return {
+      ...state,
+      wordToGuessArray: action.payload.wordToGuessArray,
+      wordToGuess: action.payload.wordToGuess,
+      countryFlagUrl: action.payload.countryFlagUrl,
+    }
 
   case 'revealLetters': {
     if (state.wordToGuessArray) {
